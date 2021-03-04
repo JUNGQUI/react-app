@@ -17,7 +17,9 @@ export default function App() {
     setTodoList(newTodoList);
   }
 
-  function onSaveToServer() {}
+  function onSaveToServer() {
+    console.log('서버에 저장되었습니다.');
+  }
 
   return (
       <div>
