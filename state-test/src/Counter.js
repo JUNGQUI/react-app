@@ -10,7 +10,7 @@ export default function Counter() {
   return (
       <div>
         <Title title={'현재 카운트 : ' + count}/>
-        <butto onClick={onClick}>증가</butto>
+        <button onClick={onClick}>증가</button>
       </div>
   );
 }
