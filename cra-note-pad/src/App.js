@@ -2,9 +2,10 @@ import React from 'react';
 import './App.css';
 import './notepad/multiState';
 import MultiStateApp from './notepad/multiState';
+import EffectHook from './notepad/effectHook';
 
 function App() {
-  return <MultiStateApp/>
+  return <EffectHook/>
 
   // return (
   //   <div className="App">
