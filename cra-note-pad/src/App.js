@@ -1,30 +1,18 @@
-import React from 'react';
+import React, {useState} from 'react';
 import './App.css';
-import './notepad/multiState';
-import MultiStateApp from './notepad/multiState';
-import EffectHook from './notepad/effectHook';
+import Profile from './notepad/Profile';
+import WidthPrinter from './notepad/WidthPrinter';
 
 function App() {
-  return <EffectHook/>
+  const [userId, setUserId] = useState(0);
 
-  // return (
-  //   <div className="App">
-  //     <header className="App-header">
-  //       <img src={logo} className="App-logo" alt="logo" />
-  //       <p>
-  //         Edit <code>src/App.js</code> and save to reload.
-  //       </p>
-  //       <a
-  //         className="App-link"
-  //         href="https://reactjs.org"
-  //         target="_blank"
-  //         rel="noopener noreferrer"
-  //       >
-  //         Learn React
-  //       </a>
-  //     </header>
-  //   </div>
-  // );
+  return (
+      <>
+        <Profile userId={userId}/>
+        {userId % 2 === 0 && <WidthPrinter/>}
+        <button onClick={() => setUserId(userId + 1)}>증가</button>
+      </>
+  );
 }
 
 export default App;
