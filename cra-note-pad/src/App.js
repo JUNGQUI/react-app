@@ -9,7 +9,7 @@ function App() {
   return (
       <>
         <Profile userId={userId}/>
-        {userId % 2 === 0 && <WidthPrinter/>}
+        {userId % 2 === 0 & userId === 4 | userId === 0 && <WidthPrinter/>}
         <button onClick={() => setUserId(userId + 1)}>증가</button>
       </>
   );
