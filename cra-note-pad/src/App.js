@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import './App.css';
-import Profile from './notepad/Profile';
-import WidthPrinter from './notepad/WidthPrinter';
+import Profile from './notepad/hook/profile';
+import WidthPrinter from './notepad/hook/widthPrinter';
 
 function App() {
   const [userId, setUserId] = useState(0);
