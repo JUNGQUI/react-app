@@ -1,7 +1,7 @@
 // import React, {useState} from 'react';
 import React from 'react';
 import './App.css';
-import RefElement2 from "./notepad/ref/element2";
+import RefUseRefExample from "./notepad/ref/useRef";
 
 function App() {
   // const [userId, setUserId] = useState(0);
@@ -14,7 +14,7 @@ function App() {
   //     </>
   // );
 
-  return <RefElement2 />
+  return <RefUseRefExample />
 }
 
 export default App;
