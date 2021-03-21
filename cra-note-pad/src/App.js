@@ -1,9 +1,7 @@
 // import React, {useState} from 'react';
 import React from 'react';
 import './App.css';
-// import Profile from './notepad/hook/profile';
-// import WidthPrinter from './notepad/hook/widthPrinter';
-import Context from "./notepad/context/Context";
+import RefUseRefExample from "./notepad/ref/useRef";
 
 function App() {
   // const [userId, setUserId] = useState(0);
@@ -16,7 +14,7 @@ function App() {
   //     </>
   // );
 
-  return <Context />;
+  return <RefUseRefExample />
 }
 
 export default App;
