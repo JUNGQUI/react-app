@@ -1,9 +1,18 @@
 // import React, {useState} from 'react';
 import React from 'react';
 import './App.css';
-import RefUseRefExample from "./notepad/ref/useRef";
+import { createStore } from 'redux';
+import { reducer } from './notepad/redux/reducer-helper';
+import UseReducer from './notepad/redux/reducer';
+import {Provider} from "react-redux";
+
+// import RefUseRefExample from "./notepad/ref/useRef";
 
 function App() {
+  const store = createStore(reducer);
+  return <Provider store={store}>
+    <UseReducer />
+  </Provider>
   // const [userId, setUserId] = useState(0);
   //
   // return (
@@ -14,7 +23,7 @@ function App() {
   //     </>
   // );
 
-  return <RefUseRefExample />
+  // return <RefUseRefExample />
 }
 
 export default App;
