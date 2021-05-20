@@ -3,7 +3,7 @@ import React from 'react';
 import './App.css';
 import { createStore } from 'redux';
 import { reducer } from './notepad/redux/reducer-helper';
-import UseReducer from './notepad/redux/reducer';
+import UseReducer from './notepad/redux/UseReducer';
 import {Provider} from "react-redux";
 
 // import RefUseRefExample from "./notepad/ref/useRef";
