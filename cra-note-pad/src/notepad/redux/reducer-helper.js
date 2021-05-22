@@ -11,7 +11,9 @@ export const reducer = createReducer(INITIAL_STATE, {
     return {...state, value: state.value - 1};
   },
   [EDITSTRING]: (state, action) => {
-    return {...state, string: action.target}
+    // return {...state, string: action.target}
+    return {...state, string: action.payload}
+    // return {...state, string: action.payload.target}
   }
 })
 
