@@ -8,10 +8,12 @@ export const INITIAL_STATE = {
 export const INCREASE = 'number/increase';
 export const DECREASE = 'number/decrease';
 export const EDITSTRING = 'string/edit';
+export const ADDSTRING = 'string/add';
 
 export const increase = createAction(INCREASE);
 export const decrease = createAction(DECREASE);
 export const editString = createAction(EDITSTRING);
+export const addString = createAction(ADDSTRING);
 // export const editString = createAction(EDITSTRING, (target) => {
 //   return {
 //     payload : {
