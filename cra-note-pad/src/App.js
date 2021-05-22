@@ -1,15 +1,21 @@
 // import React, {useState} from 'react';
 import React from 'react';
 import './App.css';
-import { createStore } from 'redux';
+import {applyMiddleware, createStore} from 'redux';
 import { reducer } from './notepad/redux/reducer-helper';
 import UseReducer from './notepad/redux/UseReducer';
 import {Provider} from "react-redux";
+import createSagaMiddleware from 'redux-saga';
+import {all} from 'redux-saga/effects'
 
 // import RefUseRefExample from "./notepad/ref/useRef";
 
 function App() {
-  const store = createStore(reducer);
+  function* rootSaga() {
+    yield all([]);
+  }
+
+  const store = createStore(reducer, applyMiddleware());
   return <Provider store={store}>
     <UseReducer />
   </Provider>
