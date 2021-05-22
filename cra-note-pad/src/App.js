@@ -5,17 +5,23 @@ import {applyMiddleware, createStore} from 'redux';
 import { reducer } from './notepad/redux/reducer-helper';
 import UseReducer from './notepad/redux/UseReducer';
 import {Provider} from "react-redux";
+import {all} from 'redux-saga/effects';
+import sagaHelper from './notepad/redux/saga-helper';
 import createSagaMiddleware from 'redux-saga';
-import {all} from 'redux-saga/effects'
+
 
 // import RefUseRefExample from "./notepad/ref/useRef";
 
 function App() {
+  const saga = createSagaMiddleware();
+  const store = createStore(reducer, applyMiddleware(saga));
+
   function* rootSaga() {
-    yield all([]);
+    yield all([sagaHelper()]);
   }
 
-  const store = createStore(reducer, applyMiddleware());
+  saga.run(rootSaga);
+
   return <Provider store={store}>
     <UseReducer />
   </Provider>

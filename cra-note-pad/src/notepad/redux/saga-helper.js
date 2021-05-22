@@ -1,14 +1,15 @@
-import {ADDSTRING} from './action-helper';
+import {types, actions} from './action-helper';
 import {all, takeLeading, put, call} from 'redux-saga/effects';
 import {callApi} from "./example-api";
 
 export function* fetchData(action) {
-  yield put(action.);
-  yield put();
+  console.log(action);
+  yield put(actions.setValue('loading', true));
+  yield put(actions.addString(action.payload.addString));
   yield call(callApi);
-  yield put();
+  yield put(actions.setValue('loading', false));
 }
 
 export default function* () {
-  yield all([takeLeading(ADDSTRING, fetchData)])
+  yield all([takeLeading(types.ADDSTRING, fetchData)])
 }
