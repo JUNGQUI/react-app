@@ -45,11 +45,14 @@ export const actions = {
 // });
 
 // export function increase() {
-//   return {type : INCREASE}
+//   return {type : types.INCREASE}
 // }
 // export function decrease() {
-//   return {type : DECREASE}
+//   return {type : types.DECREASE}
 // }
 // export function editString(target) {
-//   return {type : EDITSTRING, target}
+//   return {type : types.EDITSTRING, target}
+// }
+// export function addString(addString) {
+//   return {type : types.ADDSTRING, addString}
 // }
