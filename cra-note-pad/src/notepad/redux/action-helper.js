@@ -12,6 +12,7 @@ export const types = {
   DECREASE: 'number/decrease',
   EDITSTRING: 'string/edit',
   ADDSTRING: 'string/add',
+  ALERTSTRING: 'string/alert',
   SETVALUE: 'common/setValue'
 }
 
@@ -20,6 +21,7 @@ export const actions = {
   decrease: createAction(types.DECREASE),
   editString: createAction(types.EDITSTRING),
   addString: createAction(types.ADDSTRING),
+  alertString: createAction(types.ALERTSTRING),
   setValue: createSetValueAction(types.SETVALUE),
 }
 
@@ -43,11 +45,14 @@ export const actions = {
 // });
 
 // export function increase() {
-//   return {type : INCREASE}
+//   return {type : types.INCREASE}
 // }
 // export function decrease() {
-//   return {type : DECREASE}
+//   return {type : types.DECREASE}
 // }
 // export function editString(target) {
-//   return {type : EDITSTRING, target}
+//   return {type : types.EDITSTRING, target}
+// }
+// export function addString(addString) {
+//   return {type : types.ADDSTRING, addString}
 // }

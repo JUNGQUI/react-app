@@ -24,6 +24,11 @@ export const reducer = createReducer(INITIAL_STATE, {
     // return {...state, string: action.payload.target}
   },
   [types.ADDSTRING]: (state, action) => {
+    console.log('reducer : ' + action);
+    return {...state, addString: action.payload}
+  },
+  [types.ALERTSTRING]: (state, action) => {
+    alert('addString is ' + action.payload);
     return {...state, addString: action.payload}
   },
   [types.SETVALUE]: setValueReducer
