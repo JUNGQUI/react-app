@@ -12,6 +12,7 @@ export const types = {
   DECREASE: 'number/decrease',
   EDITSTRING: 'string/edit',
   ADDSTRING: 'string/add',
+  ALERTSTRING: 'string/alert',
   SETVALUE: 'common/setValue'
 }
 
@@ -20,6 +21,7 @@ export const actions = {
   decrease: createAction(types.DECREASE),
   editString: createAction(types.EDITSTRING),
   addString: createAction(types.ADDSTRING),
+  alertString: createAction(types.ALERTSTRING),
   setValue: createSetValueAction(types.SETVALUE),
 }
 
