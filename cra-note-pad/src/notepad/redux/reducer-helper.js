@@ -1,20 +1,32 @@
 import { createReducer } from '@reduxjs/toolkit';
-import { INITIAL_STATE, INCREASE, DECREASE, EDITSTRING } from "./action-helper";
+import { INITIAL_STATE, types } from "./action-helper";
+
+export function createSetValueAction(type) {
+  return (key, value) => ({type, key, value});
+}
+
+export function setValueReducer(state, action) {
+  state[action.key] = action.value;
+}
 
 export const reducer = createReducer(INITIAL_STATE, {
-  [INCREASE]: (state, action) => {
+  [types.INCREASE]: (state, action) => {
     console.log(`value is ${state.value}`);
     return {...state, value: state.value + 1};
   },
-  [DECREASE]: (state, action) => {
+  [types.DECREASE]: (state, action) => {
     console.log(`value is ${state.value}`);
     return {...state, value: state.value - 1};
   },
-  [EDITSTRING]: (state, action) => {
+  [types.EDITSTRING]: (state, action) => {
     // return {...state, string: action.target}
     return {...state, string: action.payload}
     // return {...state, string: action.payload.target}
-  }
+  },
+  [types.ADDSTRING]: (state, action) => {
+    return {...state, addString: action.payload}
+  },
+  [types.SETVALUE]: setValueReducer
 })
 
 // export function reducer(state=INITIAL_STATE, action) {
