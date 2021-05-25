@@ -5,7 +5,7 @@ export default function UseReducer() {
   const dispatch = useDispatch();
   const value = useSelector(state => state.value, shallowEqual);
   const string = useSelector(state => state.string, shallowEqual);
-  const addString = useSelector(state => state.addString, shallowEqual);
+  const addString = useSelector(state => state.finalAddString, shallowEqual);
   const isLoading = useSelector(state => state.loading, shallowEqual);
   return <div>
     <p>{value}</p>
