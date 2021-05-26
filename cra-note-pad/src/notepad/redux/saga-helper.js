@@ -3,10 +3,17 @@ import {all, takeLatest, put, call, debounce} from 'redux-saga/effects';
 import {callApi} from './example-api';
 
 export function* fetchData(action) {
-  console.log('saga : ' + action);
+  console.log('saga : ' + action.payload);
   yield put(actions.setValue('loading', true));
-  yield call(callApi);
-  yield put(actions.alertString('alert : ' + action.payload));
+  yield put(actions.setValue('error', ''));
+
+  try {
+    yield call(callApi);
+  } catch (error) {
+    // yield put(actions.alertString('alert : ' + error));
+    yield put(actions.setValue('error', error));
+  }
+
   yield put(actions.setValue('loading', false));
 }
 
