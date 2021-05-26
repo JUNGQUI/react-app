@@ -20,6 +20,13 @@ export const actions = {
   increase: createAction(types.INCREASE),
   decrease: createAction(types.DECREASE),
   editString: createAction(types.EDITSTRING),
+  // editString: createAction(types.EDITSTRING, (target) => {
+  //   return {
+  //     payload : {
+  //       target : target
+  //     }
+  //   }
+  // }),
   addString: createAction(types.ADDSTRING),
   alertString: createAction(types.ALERTSTRING),
   setValue: createSetValueAction(types.SETVALUE),

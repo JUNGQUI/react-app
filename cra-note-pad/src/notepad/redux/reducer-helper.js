@@ -11,11 +11,9 @@ export function setValueReducer(state, action) {
 
 export const reducer = createReducer(INITIAL_STATE, {
   [types.INCREASE]: (state, action) => {
-    console.log(`value is ${state.value}`);
     return {...state, value: state.value + 1};
   },
   [types.DECREASE]: (state, action) => {
-    console.log(`value is ${state.value}`);
     return {...state, value: state.value - 1};
   },
   [types.EDITSTRING]: (state, action) => {
@@ -24,7 +22,6 @@ export const reducer = createReducer(INITIAL_STATE, {
     // return {...state, string: action.payload.target}
   },
   [types.ADDSTRING]: (state, action) => {
-    console.log('reducer : ' + action);
     return {...state, addString: action.payload}
   },
   [types.ALERTSTRING]: (state, action) => {
